@@ -58,3 +58,11 @@ function getInputId(inputId, tickePrice) {
     const ticketPrice = quantityCount * tickePrice;
     return ticketPrice;
 }
+
+
+// book ticket
+document.getElementById('book_ticket ').addEventListener('click', function() {
+    document.getElementById('main_content').style.display = 'none'
+    document.getElementById('header').style.display = 'none'
+
+})

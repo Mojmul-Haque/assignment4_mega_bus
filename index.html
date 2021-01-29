@@ -15,7 +15,7 @@
 
 <body>
     <!--Header and Menu Section-->
-    <header class="container">
+    <header id="header" class="container">
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -27,7 +27,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="main_content" class="main-content container">
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
@@ -42,18 +42,18 @@
 
             <div class="inputs">
                 <div class="input-group">
-                    <label " for=" ">From</label>
+                    <label>From</label>
                     <input class="inp-style " type="text " name=" " placeholder="Dhaka ">
                 </div>
                 <div class="input-group ">
-                    <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                    <label>From</label>
+                    <input class="inp-style " type="text " name=" " placeholder="Chittagone ">
                 </div>
             </div>
 
-            <div class="inputs">
-                <div class="input-group">
-                    <label " for=" ">Departure</label>
+            <div class="inputs ">
+                <div class="input-group ">
+                    <label for=" ">Departure</label>
                     <input class="inp-style " type="date " name=" ">
                 </div>
                 <div class="input-group ">
@@ -63,15 +63,15 @@
             </div>
             <div class="inputs ">
                 <div class="input-group f-class ">
-                <div>
-                    <label for=" ">First Class ($150)</label>
-                    <input id="first_class_count " class="inp-style inp-width " type="number " name=" " value="1 ">
+                    <div>
+                        <label for=" ">First Class ($150)</label>
+                        <input id="first_class_count " class="inp-style inp-width " type="number " name=" " value="1 ">
+                    </div>
+                    <div class="plus-minus-btn ">
+                        <button id="incriment_firstClass ">+</button>
+                        <button id="decriment_firstClass ">-</button>
+                    </div>
                 </div>
-                <div class="plus-minus-btn ">
-                     <button id="incriment_firstClass " >+</button>
-                     <button id="decriment_firstClass " >-</button>
-                </div>
-            </div>
                 <div class="input-group f-class ">
                     <div>
                         <label for=" ">Economy ($100)</label>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style ">Book Now</button>
+            <button id="book_ticket " class="btn-style ">Book Now</button>
         </div>
     </main>
 
