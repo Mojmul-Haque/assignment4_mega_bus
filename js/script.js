@@ -1,28 +1,28 @@
 //incriment firstclass input;
 document.getElementById('incriment_firstClass ').addEventListener('click', function() {
-    changeInputValue('first_class_count ', true)
+    getInputValue('first_class_count ', true)
 })
 
 // decriment firstclass input
 
 document.getElementById('decriment_firstClass ').addEventListener("click", function() {
-    changeInputValue('first_class_count ', false)
+    getInputValue('first_class_count ', false)
 })
 
 // inciment econony input 
 document.getElementById('incriment_economy ').addEventListener('click', function() {
-    changeInputValue('economy_count ', true)
+    getInputValue('economy_count ', true)
 })
 
 
 // decriment_economy
 document.getElementById('decriment_economy ').addEventListener('click', function() {
-    changeInputValue('economy_count ', false)
+    getInputValue('economy_count ', false)
 })
 
 
 // change input quantity value;
-function changeInputValue(inputId, isIncrease) {
+function getInputValue(inputId, isIncrease) {
     const inputQuantity = document.getElementById(inputId);
     const quantityCount = parseInt(inputQuantity.value);
     let currentQuantity = quantityCount;
@@ -32,13 +32,29 @@ function changeInputValue(inputId, isIncrease) {
         currentQuantity = quantityCount - 1;
     }
     inputQuantity.value = currentQuantity;
+    getTotalPrice()
 }
 
 
-// document.getElementById('decriment_firstClass ').addEventListener('click', function() {
-//     const firstClassInput = document.getElementById(' first_class_count ');
-//     const firstClassCount = parseInt(firstClassInput.value);
-//     const currentFirstClassCount = firstClassCount - 1;
+//get total price;
+function getTotalPrice() {
+    let firstClassPrice = getInputId('first_class_count ', 150)
+    let economyPrice = getInputId('economy_count ', 100)
+    const totalPrice = firstClassPrice + economyPrice
 
-//     firstClassInput.value = currentFirstClassCount;
-// })
+    document.getElementById('total_price ').innerText = '$' + totalPrice;
+
+    const vat = totalPrice * (0.01 * 10); //infuture easily change vat % .just change the number;
+    document.getElementById('vat_amount ').innerText = '$' + vat;
+
+    const grandTotal = totalPrice + vat;
+    document.getElementById('grand_total ').innerText = '$' + grandTotal;
+}
+
+//get input quantity id for calculte ticket price;
+function getInputId(inputId, tickePrice) {
+    const inputQuantity = document.getElementById(inputId);
+    const quantityCount = parseInt(inputQuantity.value);
+    const ticketPrice = quantityCount * tickePrice;
+    return ticketPrice;
+}
