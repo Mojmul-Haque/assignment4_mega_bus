@@ -145,6 +145,14 @@ a.active {
     justify-content: space-between;
 }
 
+.button {
+    border: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    background: orange;
+}
+
 
 /*  confirmation start */
 
