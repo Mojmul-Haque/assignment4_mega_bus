@@ -1,23 +1,28 @@
 //incriment firstclass input;
 document.getElementById('incriment_firstClass ').addEventListener('click', function() {
     getInputValue('first_class_count ', true)
+    setTotalSeat('first_class_count ', 'count_fistClass ');
+
 })
 
 // decriment firstclass input
 
 document.getElementById('decriment_firstClass ').addEventListener("click", function() {
-    getInputValue('first_class_count ', false)
+    getInputValue('first_class_count ', false);
+    setTotalSeat('first_class_count ', 'count_fistClass ')
 })
 
-// inciment econony input 
+// incriment econony input 
 document.getElementById('incriment_economy ').addEventListener('click', function() {
-    getInputValue('economy_count ', true)
+    getInputValue('economy_count ', true);
+    setTotalSeat('economy_count ', 'count_economy ');
 })
 
 
 // decriment_economy
 document.getElementById('decriment_economy ').addEventListener('click', function() {
-    getInputValue('economy_count ', false)
+    getInputValue('economy_count ', false);
+    setTotalSeat('economy_count ', 'count_economy ')
 })
 
 
@@ -62,7 +67,13 @@ function getInputId(inputId, tickePrice) {
 
 // book ticket
 document.getElementById('book_ticket ').addEventListener('click', function() {
-    document.getElementById('main_content').style.display = 'none'
-    document.getElementById('header').style.display = 'none'
+    document.getElementById('main_content ').style.display = 'none'
+    document.getElementById('submit_ticket').style.display = 'block'
 
 })
+
+// total seat count
+function setTotalSeat(inputId, seatId) {
+    const setSeat = document.getElementById(inputId)
+    document.getElementById(seatId).innerText = setSeat.value;
+}
